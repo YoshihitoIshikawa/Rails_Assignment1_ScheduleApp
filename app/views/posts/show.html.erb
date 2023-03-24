@@ -1,0 +1,41 @@
+<div class = "container">
+  
+  <h3>予定詳細</h3>
+  
+  <table>
+    <tr>
+      <th>タイトル</th>
+      <td><%= @post.title %></td>
+    </tr>
+    <tr>
+      <th>開始日</th>
+      <td><%= @post.start_date.to_fs(:date_jp) %></td>
+    </tr>
+    <tr>
+      <th>終了日</th>
+      <td><%= @post.end_date.to_fs(:date_jp) %></td>
+    </tr>
+    <tr>
+      <th>終日</th>
+      <td>
+        <span class = "is_all_day_circle">
+          <% if @post.is_all_day == true %>○
+          <% else %>
+          <% end %>
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <th>スケジュールメモ</th>
+      <td><%= @post.content %></td>
+    </tr>
+  </table>
+  
+  <div>
+    <ul>
+      <li><%= link_to "予定一覧へ", :posts %></li>
+      <li><%= link_to "この予定を編集する", :edit_post %></li>
+    </ul>
+  </div>
+
+</div>
